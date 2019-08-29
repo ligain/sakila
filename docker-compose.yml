@@ -1,0 +1,18 @@
+
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:11.5
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: sakila
+      POSTGRES_PASSWORD: sakila
+    ports:
+      - 5555:5432
+    volumes:
+      - ./postgres-sakila-schema.sql:/docker-entrypoint-initdb.d/0_postgres-sakila-schema.sql
+      - ./postgres-sakila-insert-data.sql:/docker-entrypoint-initdb.d/1_postgres-sakila-insert-data.sql
+      - ./data:/var/lib/postgresql/data
