@@ -1,4 +1,4 @@
-# Voip DB
+# Sakila DB
 To connect to DB use credentials:
 
 **db:** sakila
