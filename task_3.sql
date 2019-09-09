@@ -29,5 +29,4 @@ from
 	from staff
 	join rental on rental.staff_id = staff.staff_id
 	join customer on customer.customer_id = rental.customer_id) as ss
-where pos = 1
-limit 100;
+where pos = 1;
